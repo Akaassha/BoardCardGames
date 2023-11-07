@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\BoardCardGames.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\BoardCardGames.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\BoardCardGamesEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <None Include="..\..\UpgradeLog.htm" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{BB38096A-B391-30DC-A0D4-4F3EA6B44507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\BoardCardGamePlugin">
+      <UniqueIdentifier>{0BA2D897-9F41-3E59-9035-5B0C0DCCD1D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\BoardCardGamePlugin\Source">
+      <UniqueIdentifier>{BBFFD105-826F-3668-8C72-16F74D34607B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin">
+      <UniqueIdentifier>{7FBB428A-4461-36C6-AE65-4AD7DAF4FCCD}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\BoardCardGamePlugin.Build.cs">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin</Filter>
+    </None>
+    <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private">
+      <UniqueIdentifier>{20397865-A3E6-3CDF-86CE-85B1370044F3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Card.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Dealer.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Deck.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_FunctionLibrary.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Hand.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Player.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BoardCardGamePlugin.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\hh.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\PHCardEvaluator.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\PHHash.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\PHPokerCardEvaluator.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\PHTables.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public">
+      <UniqueIdentifier>{AF0DAE92-E4DD-38C9-A09E-3E0BD827A2D3}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Card.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Dealer.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Deck.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_FunctionLibrary.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Hand.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Player.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BoardCardGamePlugin.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\hh.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHCardEvaluator.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHHash.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHPokerCardEvaluator.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHTables.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
+    <None Include="..\..\Plugins\BoardCardGamePlugin\BoardCardGamePlugin.uplugin">
+      <Filter>Plugins\BoardCardGamePlugin</Filter>
+    </None>
+    <Filter Include="Plugins\BoardCardGamePlugin\Resources">
+      <UniqueIdentifier>{50BD8CCB-F91F-36AB-9461-BE231D41981A}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\BoardCardGamePlugin\Resources\Icon128.png">
+      <Filter>Plugins\BoardCardGamePlugin\Resources</Filter>
+    </None>
+    <Filter Include="Source\BoardCardGames">
+      <UniqueIdentifier>{7E74B927-C1DC-346B-BC91-8493B8317172}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\BoardCardGames\BoardCardGames.Build.cs">
+      <Filter>Source\BoardCardGames</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\BoardCardGames\BoardCardGames.cpp">
+      <Filter>Source\BoardCardGames</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BoardCardGames\BoardCardGames.h">
+      <Filter>Source\BoardCardGames</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
