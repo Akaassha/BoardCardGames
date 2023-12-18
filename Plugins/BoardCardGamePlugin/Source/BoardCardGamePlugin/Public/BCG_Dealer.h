@@ -59,8 +59,8 @@ public:
 	void NextSubturn_Implementation();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void Bet();
-	void Bet_Implementation();
+	void Turn();
+	void Turn_Implementation();
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE float GetBetValue() const { return bet_value; };
@@ -104,6 +104,8 @@ public:
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FOnPotChanged OnPotChanged;
 
+	UFUNCTION()
+	void TurnNextPlayer(bool success);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -123,9 +125,6 @@ private:
 
 	UFUNCTION()
 	void DealCardsNextPlayer();
-
-	UFUNCTION()
-	void BetNextPlayer();
 
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	int current_player_id = 0;

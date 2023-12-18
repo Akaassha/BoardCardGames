@@ -331,6 +331,8 @@
     <None Include="..\..\BoardCardGames.uproject"/>
     <None Include="..\..\Source\BoardCardGames.Target.cs"/>
     <None Include="..\..\Source\BoardCardGamesEditor.Target.cs"/>
+    <None Include="..\..\.gitattributes"/>
+    <None Include="..\..\.gitignore"/>
     <None Include="..\..\.vsconfig"/>
     <None Include="..\..\UpgradeLog.htm"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
@@ -338,6 +340,11 @@
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
     <None Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\BoardCardGamePlugin.Build.cs"/>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Action.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Card.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -373,11 +380,6 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\hh.cpp">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
-      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
-    </ClCompile>
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\PHCardEvaluator.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -398,6 +400,7 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Action.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Card.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Dealer.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Deck.h"/>
@@ -405,7 +408,6 @@
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Hand.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Player.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BoardCardGamePlugin.h"/>
-    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\hh.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHCardEvaluator.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHHash.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHPokerCardEvaluator.h"/>

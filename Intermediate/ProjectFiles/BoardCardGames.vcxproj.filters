@@ -11,6 +11,8 @@
     <None Include="..\..\Source\BoardCardGamesEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <None Include="..\..\UpgradeLog.htm" />
     <Filter Include="Config">
@@ -46,6 +48,9 @@
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private">
       <UniqueIdentifier>{20397865-A3E6-3CDF-86CE-85B1370044F3}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Action.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG_Card.cpp">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
     </ClCompile>
@@ -67,9 +72,6 @@
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BoardCardGamePlugin.cpp">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\hh.cpp">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\PHCardEvaluator.cpp">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private</Filter>
     </ClCompile>
@@ -85,6 +87,9 @@
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public">
       <UniqueIdentifier>{AF0DAE92-E4DD-38C9-A09E-3E0BD827A2D3}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Action.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG_Card.h">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
     </ClInclude>
@@ -104,9 +109,6 @@
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BoardCardGamePlugin.h">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\hh.h">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\PHCardEvaluator.h">

@@ -6,6 +6,7 @@
 #include "BCG_Hand.h"
 #include "BCG_Dealer.h"
 #include "BCG_Deck.h"
+#include "BCG_Action.h"
 
 // Sets default values
 ABCG_Player::ABCG_Player()
@@ -30,9 +31,9 @@ void ABCG_Player::Tick(float DeltaTime)
 
 }
 
-void ABCG_Player::BeginTurn_Implementation(bool first)
+void ABCG_Player::BeginTurn_Implementation(ABCG_Player* player, ABCG_Dealer* dealer)
 {
-	IsfirstPlayerInTurn = first;
+	
 }
 
 // Called to bind functionality to input
@@ -48,40 +49,13 @@ void ABCG_Player::DrawCard_Implementation(UBCG_Deck* deck)
 	OnCardDrown.Broadcast();
 }
 
-void ABCG_Player::Bet_Implementation(float pot, float minimum, bool forced)
+void ABCG_Player::MakeAction_Implementation(TSubclassOf<UBCG_Action> Action, ABCG_Player* player, ABCG_Dealer* dealer)
 {
-
-}
-
-void ABCG_Player::Raise_Implementation()
-{
-
-}
-
-void ABCG_Player::Call_Implementation(ABCG_Dealer* Dealer)
-{
-	if (Dealer)
+	if (auto CurrentAction = NewObject<UBCG_Action>(this, Action))
 	{
-		if (CurrentBet >= Dealer->GetBetValue())
-		{
-			return;
-		}
-		else
-		{
-			float temp = Dealer->GetBetValue() - CurrentBet;
-			Dealer->AddToPot(temp);
-			Points -= temp;
-			CurrentBet += temp;
-		}
+		CurrentAction->BCG_FinnishAction.AddDynamic(dealer, &ABCG_Dealer::TurnNextPlayer);
+		CurrentAction->Execute(player, dealer);
 	}
-
-
-}
-
-void ABCG_Player::Fold_Implementation()
-{
-	IsFold = true;
-	OnFold.Broadcast();
 }
 
 int32 ABCG_Player::GetHandValue()

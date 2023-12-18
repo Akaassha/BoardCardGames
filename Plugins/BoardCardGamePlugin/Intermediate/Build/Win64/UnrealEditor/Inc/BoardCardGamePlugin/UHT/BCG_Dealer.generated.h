@@ -45,14 +45,14 @@ BOARDCARDGAMEPLUGIN_API void FOnPotChanged_DelegateWrapper(const FMulticastScrip
 #define FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Dealer_h_23_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Dealer_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execBetNextPlayer); \
 	DECLARE_FUNCTION(execDealCardsNextPlayer); \
 	DECLARE_FUNCTION(execDealCardsNextLoop); \
+	DECLARE_FUNCTION(execTurnNextPlayer); \
 	DECLARE_FUNCTION(execFindWinners); \
 	DECLARE_FUNCTION(execAddToPot); \
 	DECLARE_FUNCTION(execSetBetValue); \
 	DECLARE_FUNCTION(execGetBetValue); \
-	DECLARE_FUNCTION(execBet); \
+	DECLARE_FUNCTION(execTurn); \
 	DECLARE_FUNCTION(execNextSubturn); \
 	DECLARE_FUNCTION(execNextPlayer); \
 	DECLARE_FUNCTION(execRemoveCards); \

@@ -7,6 +7,7 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
+	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBettingEnded__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBlindBettingEnded__DelegateSignature();
@@ -24,6 +25,7 @@ void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
 		if (!Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBettingEnded__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBlindBettingEnded__DelegateSignature,
@@ -41,13 +43,13 @@ void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xF89CF655,
-				0x95A25107,
+				0x4F3E487B,
+				0x10CC4B2C,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BoardCardGamePlugin(Z_Construct_UPackage__Script_BoardCardGamePlugin, TEXT("/Script/BoardCardGamePlugin"), Z_Registration_Info_UPackage__Script_BoardCardGamePlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xF89CF655, 0x95A25107));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BoardCardGamePlugin(Z_Construct_UPackage__Script_BoardCardGamePlugin, TEXT("/Script/BoardCardGamePlugin"), Z_Registration_Info_UPackage__Script_BoardCardGamePlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x4F3E487B, 0x10CC4B2C));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

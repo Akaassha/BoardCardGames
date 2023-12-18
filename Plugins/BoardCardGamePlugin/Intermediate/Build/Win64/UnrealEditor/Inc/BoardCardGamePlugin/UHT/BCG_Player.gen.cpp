@@ -13,12 +13,14 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Player() {}
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Dealer_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player_NoRegister();
+	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_UBCG_Action_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_UBCG_Deck_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FBCG_DataStruct();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_BoardCardGamePlugin();
 // End Cross Module References
@@ -179,26 +181,14 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		P_THIS->WinTurn_Implementation(Z_Param_points);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(ABCG_Player::execFold)
+	DEFINE_FUNCTION(ABCG_Player::execMakeAction)
 	{
+		P_GET_OBJECT(UClass,Z_Param_action);
+		P_GET_OBJECT(ABCG_Player,Z_Param_player);
+		P_GET_OBJECT(ABCG_Dealer,Z_Param_dealer);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->Fold_Implementation();
-		P_NATIVE_END;
-	}
-	DEFINE_FUNCTION(ABCG_Player::execCall)
-	{
-		P_GET_OBJECT(ABCG_Dealer,Z_Param_Dealer);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->Call_Implementation(Z_Param_Dealer);
-		P_NATIVE_END;
-	}
-	DEFINE_FUNCTION(ABCG_Player::execRaise)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->Raise_Implementation();
+		P_THIS->MakeAction_Implementation(Z_Param_action,Z_Param_player,Z_Param_dealer);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ABCG_Player::execDrawCard)
@@ -211,56 +201,39 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	}
 	DEFINE_FUNCTION(ABCG_Player::execBeginTurn)
 	{
-		P_GET_UBOOL(Z_Param_first);
+		P_GET_OBJECT(ABCG_Player,Z_Param_player);
+		P_GET_OBJECT(ABCG_Dealer,Z_Param_dealer);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->BeginTurn_Implementation(Z_Param_first);
+		P_THIS->BeginTurn_Implementation(Z_Param_player,Z_Param_dealer);
 		P_NATIVE_END;
 	}
 	struct BCG_Player_eventBeginTurn_Parms
 	{
-		bool first;
-	};
-	struct BCG_Player_eventBet_Parms
-	{
-		float pot;
-		float minimum;
-		bool forced;
-	};
-	struct BCG_Player_eventCall_Parms
-	{
-		ABCG_Dealer* Dealer;
+		ABCG_Player* player;
+		ABCG_Dealer* dealer;
 	};
 	struct BCG_Player_eventDrawCard_Parms
 	{
 		UBCG_Deck* deck;
+	};
+	struct BCG_Player_eventMakeAction_Parms
+	{
+		TSubclassOf<UBCG_Action>  action;
+		ABCG_Player* player;
+		ABCG_Dealer* dealer;
 	};
 	struct BCG_Player_eventWinTurn_Parms
 	{
 		float points;
 	};
 	static FName NAME_ABCG_Player_BeginTurn = FName(TEXT("BeginTurn"));
-	void ABCG_Player::BeginTurn(bool first)
+	void ABCG_Player::BeginTurn(ABCG_Player* player, ABCG_Dealer* dealer)
 	{
 		BCG_Player_eventBeginTurn_Parms Parms;
-		Parms.first=first ? true : false;
+		Parms.player=player;
+		Parms.dealer=dealer;
 		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_BeginTurn),&Parms);
-	}
-	static FName NAME_ABCG_Player_Bet = FName(TEXT("Bet"));
-	void ABCG_Player::Bet(float pot, float minimum, bool forced)
-	{
-		BCG_Player_eventBet_Parms Parms;
-		Parms.pot=pot;
-		Parms.minimum=minimum;
-		Parms.forced=forced ? true : false;
-		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_Bet),&Parms);
-	}
-	static FName NAME_ABCG_Player_Call = FName(TEXT("Call"));
-	void ABCG_Player::Call(ABCG_Dealer* Dealer)
-	{
-		BCG_Player_eventCall_Parms Parms;
-		Parms.Dealer=Dealer;
-		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_Call),&Parms);
 	}
 	static FName NAME_ABCG_Player_DrawCard = FName(TEXT("DrawCard"));
 	void ABCG_Player::DrawCard(UBCG_Deck* deck)
@@ -269,15 +242,14 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		Parms.deck=deck;
 		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_DrawCard),&Parms);
 	}
-	static FName NAME_ABCG_Player_Fold = FName(TEXT("Fold"));
-	void ABCG_Player::Fold()
+	static FName NAME_ABCG_Player_MakeAction = FName(TEXT("MakeAction"));
+	void ABCG_Player::MakeAction(TSubclassOf<UBCG_Action>  action, ABCG_Player* player, ABCG_Dealer* dealer)
 	{
-		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_Fold),NULL);
-	}
-	static FName NAME_ABCG_Player_Raise = FName(TEXT("Raise"));
-	void ABCG_Player::Raise()
-	{
-		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_Raise),NULL);
+		BCG_Player_eventMakeAction_Parms Parms;
+		Parms.action=action;
+		Parms.player=player;
+		Parms.dealer=dealer;
+		ProcessEvent(FindFunctionChecked(NAME_ABCG_Player_MakeAction),&Parms);
 	}
 	static FName NAME_ABCG_Player_WinTurn = FName(TEXT("WinTurn"));
 	void ABCG_Player::WinTurn(float points)
@@ -292,14 +264,12 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AddPoints", &ABCG_Player::execAddPoints },
 			{ "BeginTurn", &ABCG_Player::execBeginTurn },
-			{ "Call", &ABCG_Player::execCall },
 			{ "DrawCard", &ABCG_Player::execDrawCard },
-			{ "Fold", &ABCG_Player::execFold },
 			{ "GetCards", &ABCG_Player::execGetCards },
 			{ "GetHandValue", &ABCG_Player::execGetHandValue },
 			{ "GetPoints", &ABCG_Player::execGetPoints },
 			{ "InsertCards", &ABCG_Player::execInsertCards },
-			{ "Raise", &ABCG_Player::execRaise },
+			{ "MakeAction", &ABCG_Player::execMakeAction },
 			{ "SetPoints", &ABCG_Player::execSetPoints },
 			{ "WinTurn", &ABCG_Player::execWinTurn },
 		};
@@ -341,25 +311,29 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	}
 	struct Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics
 	{
-		static void NewProp_first_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_first;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_player;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_dealer;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	void Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_first_SetBit(void* Obj)
-	{
-		((BCG_Player_eventBeginTurn_Parms*)Obj)->first = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_first = { "first", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(BCG_Player_eventBeginTurn_Parms), &Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_first_SetBit, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_player = { "player", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventBeginTurn_Parms, player), Z_Construct_UClass_ABCG_Player_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_dealer = { "dealer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventBeginTurn_Parms, dealer), Z_Construct_UClass_ABCG_Dealer_NoRegister, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_first,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_player,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::NewProp_dealer,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//TO DO: try to make it implementable Event\n" },
+#endif
 		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "TO DO: try to make it implementable Event" },
+#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "BeginTurn", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::PropPointers), sizeof(BCG_Player_eventBeginTurn_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::Function_MetaDataParams) };
@@ -371,77 +345,6 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_BeginTurn_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_ABCG_Player_Bet_Statics
-	{
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_pot;
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_minimum;
-		static void NewProp_forced_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_forced;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_pot = { "pot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventBet_Parms, pot), METADATA_PARAMS(0, nullptr) };
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_minimum = { "minimum", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventBet_Parms, minimum), METADATA_PARAMS(0, nullptr) };
-	void Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_forced_SetBit(void* Obj)
-	{
-		((BCG_Player_eventBet_Parms*)Obj)->forced = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_forced = { "forced", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(BCG_Player_eventBet_Parms), &Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_forced_SetBit, METADATA_PARAMS(0, nullptr) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABCG_Player_Bet_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_pot,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_minimum,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_Bet_Statics::NewProp_forced,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_Bet_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_Bet_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "Bet", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_Bet_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Bet_Statics::PropPointers), sizeof(BCG_Player_eventBet_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Bet_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_Bet_Statics::Function_MetaDataParams) };
-	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Bet_Statics::PropPointers) < 2048);
-	static_assert(sizeof(BCG_Player_eventBet_Parms) < MAX_uint16);
-	UFunction* Z_Construct_UFunction_ABCG_Player_Bet()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_Bet_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_ABCG_Player_Call_Statics
-	{
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Dealer;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_Call_Statics::NewProp_Dealer = { "Dealer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventCall_Parms, Dealer), Z_Construct_UClass_ABCG_Dealer_NoRegister, METADATA_PARAMS(0, nullptr) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABCG_Player_Call_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_Call_Statics::NewProp_Dealer,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_Call_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_Call_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "Call", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_Call_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Call_Statics::PropPointers), sizeof(BCG_Player_eventCall_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Call_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_Call_Statics::Function_MetaDataParams) };
-	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Call_Statics::PropPointers) < 2048);
-	static_assert(sizeof(BCG_Player_eventCall_Parms) < MAX_uint16);
-	UFunction* Z_Construct_UFunction_ABCG_Player_Call()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_Call_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -480,28 +383,6 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_ABCG_Player_Fold_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_Fold_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_Fold_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "Fold", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Fold_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_Fold_Statics::Function_MetaDataParams) };
-	UFunction* Z_Construct_UFunction_ABCG_Player_Fold()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_Fold_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -652,25 +533,39 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_ABCG_Player_Raise_Statics
+	struct Z_Construct_UFunction_ABCG_Player_MakeAction_Statics
 	{
+		static const UECodeGen_Private::FClassPropertyParams NewProp_action;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_player;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_dealer;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::NewProp_action = { "action", nullptr, (EPropertyFlags)0x0014000000000080, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventMakeAction_Parms, action), Z_Construct_UClass_UClass, Z_Construct_UClass_UBCG_Action_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::NewProp_player = { "player", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventMakeAction_Parms, player), Z_Construct_UClass_ABCG_Player_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::NewProp_dealer = { "dealer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventMakeAction_Parms, dealer), Z_Construct_UClass_ABCG_Dealer_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::NewProp_action,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::NewProp_player,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::NewProp_dealer,
+	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_Raise_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Public/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_Raise_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "Raise", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_Raise_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_Raise_Statics::Function_MetaDataParams) };
-	UFunction* Z_Construct_UFunction_ABCG_Player_Raise()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "MakeAction", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::PropPointers), sizeof(BCG_Player_eventMakeAction_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::PropPointers) < 2048);
+	static_assert(sizeof(BCG_Player_eventMakeAction_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_ABCG_Player_MakeAction()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_Raise_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -723,7 +618,13 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\n//void Bet(float pot, float minimum, bool forced);\n//void Bet_Implementation(float pot, float minimum, bool forced);\n" },
+#endif
 		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\nvoid Bet(float pot, float minimum, bool forced);\nvoid Bet_Implementation(float pot, float minimum, bool forced);" },
+#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "WinTurn", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::PropPointers), sizeof(BCG_Player_eventWinTurn_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams) };
@@ -805,18 +706,15 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABCG_Player_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABCG_Player_AddPoints, "AddPoints" }, // 2629065857
-		{ &Z_Construct_UFunction_ABCG_Player_BeginTurn, "BeginTurn" }, // 1754800218
-		{ &Z_Construct_UFunction_ABCG_Player_Bet, "Bet" }, // 300536818
-		{ &Z_Construct_UFunction_ABCG_Player_Call, "Call" }, // 295905575
+		{ &Z_Construct_UFunction_ABCG_Player_BeginTurn, "BeginTurn" }, // 9544475
 		{ &Z_Construct_UFunction_ABCG_Player_DrawCard, "DrawCard" }, // 3986198655
-		{ &Z_Construct_UFunction_ABCG_Player_Fold, "Fold" }, // 174910758
 		{ &Z_Construct_UFunction_ABCG_Player_GetCards, "GetCards" }, // 466701552
 		{ &Z_Construct_UFunction_ABCG_Player_GetHandValue, "GetHandValue" }, // 882682491
 		{ &Z_Construct_UFunction_ABCG_Player_GetPoints, "GetPoints" }, // 3320315956
 		{ &Z_Construct_UFunction_ABCG_Player_InsertCards, "InsertCards" }, // 2608063131
-		{ &Z_Construct_UFunction_ABCG_Player_Raise, "Raise" }, // 3238536557
+		{ &Z_Construct_UFunction_ABCG_Player_MakeAction, "MakeAction" }, // 508143157
 		{ &Z_Construct_UFunction_ABCG_Player_SetPoints, "SetPoints" }, // 3662311951
-		{ &Z_Construct_UFunction_ABCG_Player_WinTurn, "WinTurn" }, // 483442595
+		{ &Z_Construct_UFunction_ABCG_Player_WinTurn, "WinTurn" }, // 122439654
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -830,13 +728,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData[] = {
 		{ "Category", "BCG_Player" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "//UPROPERTY(EditAnywhere, BlueprintReadOnly)\n//UBCG_Hand* Hand;\n" },
-#endif
 		{ "ModuleRelativePath", "Public/BCG_Player.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "UPROPERTY(EditAnywhere, BlueprintReadOnly)\nUBCG_Hand* Hand;" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData) }; // 411631528
@@ -967,9 +859,9 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABCG_Player, ABCG_Player::StaticClass, TEXT("ABCG_Player"), &Z_Registration_Info_UClass_ABCG_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Player), 1495292307U) },
+		{ Z_Construct_UClass_ABCG_Player, ABCG_Player::StaticClass, TEXT("ABCG_Player"), &Z_Registration_Info_UClass_ABCG_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Player), 2512095017U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_645497262(TEXT("/Script/BoardCardGamePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_4277672476(TEXT("/Script/BoardCardGamePlugin"),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

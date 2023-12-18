@@ -9,6 +9,7 @@
 class UBCG_Deck;
 class ABCG_Dealer;
 class UBCG_Hand;
+class UBCG_Action;
 struct FBCG_DataStruct;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCardDrown);
@@ -25,29 +26,25 @@ public:
 	// Sets default values for this pawn's properties
 	ABCG_Player();
 
+	//TO DO: try to make it implementable Event
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void BeginTurn(bool first);
-	void BeginTurn_Implementation(bool first);
+	void BeginTurn(ABCG_Player* player, ABCG_Dealer* dealer);
+	void BeginTurn_Implementation(ABCG_Player* player, ABCG_Dealer* dealer);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void DrawCard(UBCG_Deck* deck);
 	void DrawCard_Implementation(UBCG_Deck* deck);
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void Bet(float pot, float minimum, bool forced);
-	void Bet_Implementation(float pot, float minimum, bool forced);
-
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void Raise();
-	void Raise_Implementation();
+	void MakeAction(TSubclassOf<UBCG_Action> action, ABCG_Player* player, ABCG_Dealer* dealer);
+	void MakeAction_Implementation(TSubclassOf<UBCG_Action> action, ABCG_Player* player, ABCG_Dealer* dealer);
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void Call(ABCG_Dealer* Dealer);
-	void Call_Implementation(ABCG_Dealer* Dealer);
+	//UFUNCTION()
+	//void OnActionFinnsihed(bool success);
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void Fold();
-	void Fold_Implementation();
+	//UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	//void Bet(float pot, float minimum, bool forced);
+	//void Bet_Implementation(float pot, float minimum, bool forced);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void WinTurn(float points);
@@ -70,9 +67,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void AddPoints(float value);
-
-	//UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	//UBCG_Hand* Hand;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FBCG_DataStruct> Cards;

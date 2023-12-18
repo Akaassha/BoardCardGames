@@ -143,31 +143,45 @@ void ABCG_Dealer::DealCardsNextLoop()
 
 }
 
-void ABCG_Dealer::Bet_Implementation()
+void ABCG_Dealer::Turn_Implementation()
 {
 	if (Players.Num() <= 0) return;
 
-	Players[current_player_id]->OnBetEnded.AddDynamic(this, &ABCG_Dealer::BetNextPlayer);
 	players_played++;
-	Players[current_player_id]->Bet(Pot, 0, false);
+	Players[current_player_id]->BeginTurn(Players[current_player_id], this);
+
+	//Players[current_player_id]->OnBetEnded.AddDynamic(this, &ABCG_Dealer::TurnNextPlayer);
+	//players_played++;
+	//Players[current_player_id]->BeginTurn();
 }
 
-void ABCG_Dealer::BetNextPlayer()
+void ABCG_Dealer::TurnNextPlayer(bool success)
 {
 	if (players_played < Players.Num())
 	{
-		Players[current_player_id]->OnBetEnded.RemoveDynamic(this, &ABCG_Dealer::BetNextPlayer);
 		NextPlayer();
-		Players[current_player_id]->OnBetEnded.AddDynamic(this, &ABCG_Dealer::BetNextPlayer);
 		players_played++;
-		Players[current_player_id]->Bet(Pot, 0, false);
+		Players[current_player_id]->BeginTurn(Players[current_player_id], this);
 	}
 	else
 	{
-		Players[current_player_id]->OnBetEnded.RemoveDynamic(this, &ABCG_Dealer::BetNextPlayer);
 		players_played = 0;
 		OnBettingEnded.Broadcast();
 	}
+	//if (players_played < Players.Num())
+	//{
+	//	Players[current_player_id]->OnBetEnded.RemoveDynamic(this, &ABCG_Dealer::TurnNextPlayer);
+	//	NextPlayer();
+	//	Players[current_player_id]->OnBetEnded.AddDynamic(this, &ABCG_Dealer::TurnNextPlayer);
+	//	players_played++;
+	//	Players[current_player_id]->BeginTurn();
+	//}
+	//else
+	//{
+	//	Players[current_player_id]->OnBetEnded.RemoveDynamic(this, &ABCG_Dealer::TurnNextPlayer);
+	//	players_played = 0;
+	//	OnBettingEnded.Broadcast();
+	//}
 }
 
 void ABCG_Dealer::DrawCardOnBoard_Implementation(class UBCG_Deck* deck, int32 amount)
