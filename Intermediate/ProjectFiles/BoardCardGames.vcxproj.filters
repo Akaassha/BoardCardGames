@@ -79,15 +79,6 @@
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator">
       <UniqueIdentifier>{71633A56-8F11-35B2-BD57-B5BB503BD610}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator\PHCardEvaluator.cpp">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator\PHHash.cpp">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator\PHPokerCardEvaluator.cpp">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator\PHTables.cpp">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator</Filter>
     </ClCompile>
@@ -124,15 +115,6 @@
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator">
       <UniqueIdentifier>{538E0800-0AE4-36AB-B577-00322F0C8C9E}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator\PHCardEvaluator.h">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator\PHHash.h">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator\PHPokerCardEvaluator.h">
-      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator\PHTables.h">
       <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator</Filter>
     </ClInclude>

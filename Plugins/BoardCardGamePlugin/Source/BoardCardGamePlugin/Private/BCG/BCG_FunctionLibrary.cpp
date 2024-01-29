@@ -1,15 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "BCG/BCG_FunctionLibrary.h"
-
-// Fill out your copyright notice in the Description page of Project Settings.
-
-//#include "PHPokerCardEvaluator.h"
 #include <string>
 #include "ClassicCards/Evaluator/PHTables.h"
 #include "BCG/BCG_Card.h"
-#include "ClassicCards/Evaluator/PHHash.h"
 
 static short binaries_by_id[52] = {
   0x1,  0x1,  0x1,  0x1,
@@ -43,6 +36,26 @@ static short suitbit_by_id[52] = {
   0x1,  0x8,  0x40,  0x200,
 };
 
+int hash_quinary(const unsigned char q[], int k)
+{
+    int sum = 0;
+    const int len = 13;
+    int i;
+
+    for (i = 0; i < len; i++)
+    {
+        sum += dp[q[i]][len - i - 1][k];
+
+        k -= q[i];
+
+        if (k <= 0)
+        {
+            break;
+        }
+    }
+
+    return sum;
+}
 
 int evaluate_5cards(int a, int b, int c, int d, int e) {
     int suit_hash = 0;

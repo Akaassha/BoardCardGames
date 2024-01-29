@@ -3,14 +3,6 @@
 
 #include "ClassicCards/Evaluator/PHTables.h"
 
-PHTables::PHTables()
-{
-}
-
-PHTables::~PHTables()
-{
-}
-
 const unsigned int choose[53][10] = {
   {
     1,  0,  0,  0,  0,

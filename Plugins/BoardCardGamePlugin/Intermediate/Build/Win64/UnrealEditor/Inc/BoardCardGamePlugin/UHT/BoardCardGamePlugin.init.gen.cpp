@@ -41,13 +41,13 @@ void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xB32CD6FF,
-				0xC98F3AA1,
+				0xCF742C9E,
+				0x2B2DEB32,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BoardCardGamePlugin(Z_Construct_UPackage__Script_BoardCardGamePlugin, TEXT("/Script/BoardCardGamePlugin"), Z_Registration_Info_UPackage__Script_BoardCardGamePlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB32CD6FF, 0xC98F3AA1));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BoardCardGamePlugin(Z_Construct_UPackage__Script_BoardCardGamePlugin, TEXT("/Script/BoardCardGamePlugin"), Z_Registration_Info_UPackage__Script_BoardCardGamePlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xCF742C9E, 0x2B2DEB32));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
