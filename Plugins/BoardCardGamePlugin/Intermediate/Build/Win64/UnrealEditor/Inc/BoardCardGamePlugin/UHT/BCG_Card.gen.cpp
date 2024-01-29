@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BoardCardGamePlugin/Public/BCG_Card.h"
+#include "BoardCardGamePlugin/Public/BCG/BCG_Card.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBCG_Card() {}
 // Cross Module References
@@ -58,7 +58,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Card() {}
 		{ "diamond.Name", "BCG_CardColor::diamond" },
 		{ "heart.DisplayName", "Heart" },
 		{ "heart.Name", "BCG_CardColor::heart" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 		{ "none.DisplayName", "none" },
 		{ "none.Name", "BCG_CardColor::none" },
 		{ "spade.DisplayName", "Spade" },
@@ -137,7 +137,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Card() {}
 		{ "jack.Name", "BCG_CardKind::jack" },
 		{ "king.DisplayName", "King" },
 		{ "king.Name", "BCG_CardKind::king" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 		{ "nine.DisplayName", "9" },
 		{ "nine.Name", "BCG_CardKind::nine" },
 		{ "non.DisplayName", "none" },
@@ -222,7 +222,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	void* Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewStructOps()
@@ -233,28 +233,28 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData[] = {
 		{ "Category", "BCG_DataStruct" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color = { "color", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, color), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardColor, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData) }; // 2489273740
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color = { "color", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, color), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardColor, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData) }; // 637571475
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData[] = {
 		{ "Category", "BCG_DataStruct" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind = { "kind", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, kind), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardKind, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData) }; // 1114070354
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind = { "kind", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, kind), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardKind, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData) }; // 3222852574
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_avers_MetaData[] = {
 		{ "Category", "BCG_DataStruct" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_avers = { "avers", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, avers), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_avers_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_avers_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id_MetaData[] = {
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id = { "id", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, id), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id_MetaData) };
@@ -331,7 +331,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Card, nullptr, "GetCardNameAsString", nullptr, nullptr, Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::BCG_Card_eventGetCardNameAsString_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Card_GetCardNameAsString_Statics::Function_MetaDataParams) };
@@ -366,7 +366,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Card_Print_Statics::Function_MetaDataParams[] = {
 		{ "CPP_Default_time", "10.000000" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Card_Print_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Card, nullptr, "Print", nullptr, nullptr, Z_Construct_UFunction_ABCG_Card_Print_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Card_Print_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Card_Print_Statics::BCG_Card_eventPrint_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Card_Print_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Card_Print_Statics::Function_MetaDataParams) };
@@ -419,28 +419,28 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABCG_Card_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ABCG_Card_GetCardNameAsString, "GetCardNameAsString" }, // 739420979
-		{ &Z_Construct_UFunction_ABCG_Card_Print, "Print" }, // 2779010644
+		{ &Z_Construct_UFunction_ABCG_Card_GetCardNameAsString, "GetCardNameAsString" }, // 2831259292
+		{ &Z_Construct_UFunction_ABCG_Card_Print, "Print" }, // 928379128
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Card_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "BCG_Card.h" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "IncludePath", "BCG/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMeshComponent_MetaData[] = {
 		{ "Category", "Apperance" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMeshComponent = { "CardMeshComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Card, CardMeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMeshComponent_MetaData), Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMeshComponent_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMesh_MetaData[] = {
 		{ "Category", "BCG_Card" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMesh = { "CardMesh", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Card, CardMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMesh_MetaData), Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMesh_MetaData) };
@@ -448,7 +448,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Card_Statics::NewProp_revers_MetaData[] = {
 		{ "Category", "BCG_Card" },
 		{ "ExposeOnSpawn", "true" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Card_Statics::NewProp_revers = { "revers", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Card, revers), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::NewProp_revers_MetaData), Z_Construct_UClass_ABCG_Card_Statics::NewProp_revers_MetaData) };
@@ -456,10 +456,10 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData_MetaData[] = {
 		{ "Category", "BCG_Card" },
 		{ "ExposeOnSpawn", "true" },
-		{ "ModuleRelativePath", "Public/BCG_Card.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Card.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData = { "CardData", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Card, CardData), Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData_MetaData), Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData_MetaData) }; // 411631528
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData = { "CardData", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Card, CardData), Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData_MetaData), Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardData_MetaData) }; // 3788656489
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABCG_Card_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMeshComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABCG_Card_Statics::NewProp_CardMesh,
@@ -499,24 +499,24 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABCG_Card);
 	ABCG_Card::~ABCG_Card() {}
-	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics
+	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::EnumInfo[] = {
-		{ BCG_CardColor_StaticEnum, TEXT("BCG_CardColor"), &Z_Registration_Info_UEnum_BCG_CardColor, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2489273740U) },
-		{ BCG_CardKind_StaticEnum, TEXT("BCG_CardKind"), &Z_Registration_Info_UEnum_BCG_CardKind, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1114070354U) },
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::EnumInfo[] = {
+		{ BCG_CardColor_StaticEnum, TEXT("BCG_CardColor"), &Z_Registration_Info_UEnum_BCG_CardColor, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 637571475U) },
+		{ BCG_CardKind_StaticEnum, TEXT("BCG_CardKind"), &Z_Registration_Info_UEnum_BCG_CardKind, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3222852574U) },
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::ScriptStructInfo[] = {
-		{ FBCG_DataStruct::StaticStruct, Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewStructOps, TEXT("BCG_DataStruct"), &Z_Registration_Info_UScriptStruct_BCG_DataStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FBCG_DataStruct), 411631528U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::ScriptStructInfo[] = {
+		{ FBCG_DataStruct::StaticStruct, Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewStructOps, TEXT("BCG_DataStruct"), &Z_Registration_Info_UScriptStruct_BCG_DataStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FBCG_DataStruct), 3788656489U) },
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABCG_Card, ABCG_Card::StaticClass, TEXT("ABCG_Card"), &Z_Registration_Info_UClass_ABCG_Card, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Card), 1868864179U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ABCG_Card, ABCG_Card::StaticClass, TEXT("ABCG_Card"), &Z_Registration_Info_UClass_ABCG_Card, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Card), 3445064167U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_2988865427(TEXT("/Script/BoardCardGamePlugin"),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::ClassInfo),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::ScriptStructInfo),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Card_h_Statics::EnumInfo));
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_1151188329(TEXT("/Script/BoardCardGamePlugin"),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::ClassInfo),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::ScriptStructInfo),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Card_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

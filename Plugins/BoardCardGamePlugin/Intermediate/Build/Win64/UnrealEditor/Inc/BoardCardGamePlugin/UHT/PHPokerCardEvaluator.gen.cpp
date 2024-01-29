@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BoardCardGamePlugin/Public/PHPokerCardEvaluator.h"
+#include "BoardCardGamePlugin/Public/ClassicCards/Evaluator/PHPokerCardEvaluator.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePHPokerCardEvaluator() {}
 // Cross Module References
@@ -43,8 +43,8 @@ void EmptyLinkFunctionForGeneratedCodePHPokerCardEvaluator() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "///*\n// * Given a rank from 1 to 7462\n// * Returns whether the rank is a flush\n// */\n//bool is_flush(int rank);\n" },
 #endif
-		{ "IncludePath", "PHPokerCardEvaluator.h" },
-		{ "ModuleRelativePath", "Public/PHPokerCardEvaluator.h" },
+		{ "IncludePath", "ClassicCards/Evaluator/PHPokerCardEvaluator.h" },
+		{ "ModuleRelativePath", "Public/ClassicCards/Evaluator/PHPokerCardEvaluator.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "* Given a rank from 1 to 7462\n* Returns whether the rank is a flush\n\nbool is_flush(int rank);" },
 #endif
@@ -83,15 +83,15 @@ void EmptyLinkFunctionForGeneratedCodePHPokerCardEvaluator() {}
 	UPHPokerCardEvaluator::UPHPokerCardEvaluator() {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UPHPokerCardEvaluator);
 	UPHPokerCardEvaluator::~UPHPokerCardEvaluator() {}
-	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHPokerCardEvaluator_h_Statics
+	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHPokerCardEvaluator_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHPokerCardEvaluator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPHPokerCardEvaluator, UPHPokerCardEvaluator::StaticClass, TEXT("UPHPokerCardEvaluator"), &Z_Registration_Info_UClass_UPHPokerCardEvaluator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPHPokerCardEvaluator), 1773501643U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHPokerCardEvaluator_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UPHPokerCardEvaluator, UPHPokerCardEvaluator::StaticClass, TEXT("UPHPokerCardEvaluator"), &Z_Registration_Info_UClass_UPHPokerCardEvaluator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPHPokerCardEvaluator), 458709169U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHPokerCardEvaluator_h_3384323781(TEXT("/Script/BoardCardGamePlugin"),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHPokerCardEvaluator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHPokerCardEvaluator_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHPokerCardEvaluator_h_4244326249(TEXT("/Script/BoardCardGamePlugin"),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHPokerCardEvaluator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHPokerCardEvaluator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

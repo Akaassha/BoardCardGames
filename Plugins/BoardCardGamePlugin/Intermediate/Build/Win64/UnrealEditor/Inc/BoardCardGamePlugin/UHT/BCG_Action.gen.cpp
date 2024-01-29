@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BoardCardGamePlugin/Public/BCG_Action.h"
+#include "BoardCardGamePlugin/Public/BCG/BCG_Action.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBCG_Action() {}
 // Cross Module References
@@ -44,7 +44,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Action() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "ModuleRelativePath", "Public/BCG_Action.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Action.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BoardCardGamePlugin, nullptr, "BCG_FinnishAction__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature_Statics::_Script_BoardCardGamePlugin_eventBCG_FinnishAction_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -122,7 +122,7 @@ void FBCG_FinnishAction_DelegateWrapper(const FMulticastScriptDelegate& BCG_Finn
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Action.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Action.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UBCG_Action, nullptr, "BCG_RemoveAction", nullptr, nullptr, Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::PropPointers), sizeof(Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::BCG_Action_eventBCG_RemoveAction_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::Function_MetaDataParams), Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction_Statics::Function_MetaDataParams) };
@@ -155,7 +155,7 @@ void FBCG_FinnishAction_DelegateWrapper(const FMulticastScriptDelegate& BCG_Finn
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBCG_Action_Execute_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Action.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Action.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UBCG_Action_Execute_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UBCG_Action, nullptr, "Execute", nullptr, nullptr, Z_Construct_UFunction_UBCG_Action_Execute_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Action_Execute_Statics::PropPointers), sizeof(BCG_Action_eventExecute_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Action_Execute_Statics::Function_MetaDataParams), Z_Construct_UFunction_UBCG_Action_Execute_Statics::Function_MetaDataParams) };
@@ -196,24 +196,24 @@ void FBCG_FinnishAction_DelegateWrapper(const FMulticastScriptDelegate& BCG_Finn
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Action_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UBCG_Action_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction, "BCG_RemoveAction" }, // 1583923172
-		{ &Z_Construct_UFunction_UBCG_Action_Execute, "Execute" }, // 3066481526
+		{ &Z_Construct_UFunction_UBCG_Action_BCG_RemoveAction, "BCG_RemoveAction" }, // 3705258594
+		{ &Z_Construct_UFunction_UBCG_Action_Execute, "Execute" }, // 2315554460
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Action_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBCG_Action_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "IncludePath", "BCG_Action.h" },
+		{ "IncludePath", "BCG/BCG_Action.h" },
 		{ "IsBlueprintBase", "true" },
-		{ "ModuleRelativePath", "Public/BCG_Action.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Action.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction_MetaData[] = {
-		{ "ModuleRelativePath", "Public/BCG_Action.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Action.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction = { "BCG_FinnishAction", nullptr, (EPropertyFlags)0x0010100000080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UBCG_Action, BCG_FinnishAction), Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction_MetaData), Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction_MetaData) }; // 483875015
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction = { "BCG_FinnishAction", nullptr, (EPropertyFlags)0x0010100000080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UBCG_Action, BCG_FinnishAction), Z_Construct_UDelegateFunction_BoardCardGamePlugin_BCG_FinnishAction__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction_MetaData), Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction_MetaData) }; // 674312416
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBCG_Action_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBCG_Action_Statics::NewProp_BCG_FinnishAction,
 	};
@@ -250,15 +250,15 @@ void FBCG_FinnishAction_DelegateWrapper(const FMulticastScriptDelegate& BCG_Finn
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBCG_Action);
 	UBCG_Action::~UBCG_Action() {}
-	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Action_h_Statics
+	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Action_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Action_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBCG_Action, UBCG_Action::StaticClass, TEXT("UBCG_Action"), &Z_Registration_Info_UClass_UBCG_Action, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBCG_Action), 657176631U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Action_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBCG_Action, UBCG_Action::StaticClass, TEXT("UBCG_Action"), &Z_Registration_Info_UClass_UBCG_Action, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBCG_Action), 3576705616U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Action_h_4165522537(TEXT("/Script/BoardCardGamePlugin"),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Action_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Action_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Action_h_3489851608(TEXT("/Script/BoardCardGamePlugin"),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Action_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Action_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

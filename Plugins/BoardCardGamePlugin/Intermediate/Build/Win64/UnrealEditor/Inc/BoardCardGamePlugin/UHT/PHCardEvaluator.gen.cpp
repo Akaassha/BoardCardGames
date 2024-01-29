@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BoardCardGamePlugin/Public/PHCardEvaluator.h"
+#include "BoardCardGamePlugin/Public/ClassicCards/Evaluator/PHCardEvaluator.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePHCardEvaluator() {}
 // Cross Module References
@@ -40,8 +40,8 @@ void EmptyLinkFunctionForGeneratedCodePHCardEvaluator() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPHCardEvaluator_Statics::Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "IncludePath", "PHCardEvaluator.h" },
-		{ "ModuleRelativePath", "Public/PHCardEvaluator.h" },
+		{ "IncludePath", "ClassicCards/Evaluator/PHCardEvaluator.h" },
+		{ "ModuleRelativePath", "Public/ClassicCards/Evaluator/PHCardEvaluator.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UPHCardEvaluator_Statics::StaticCppClassTypeInfo = {
@@ -76,15 +76,15 @@ void EmptyLinkFunctionForGeneratedCodePHCardEvaluator() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UPHCardEvaluator);
 	UPHCardEvaluator::~UPHCardEvaluator() {}
-	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHCardEvaluator_h_Statics
+	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHCardEvaluator_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHCardEvaluator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPHCardEvaluator, UPHCardEvaluator::StaticClass, TEXT("UPHCardEvaluator"), &Z_Registration_Info_UClass_UPHCardEvaluator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPHCardEvaluator), 4080785087U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHCardEvaluator_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UPHCardEvaluator, UPHCardEvaluator::StaticClass, TEXT("UPHCardEvaluator"), &Z_Registration_Info_UClass_UPHCardEvaluator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPHCardEvaluator), 3022427631U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHCardEvaluator_h_3456214959(TEXT("/Script/BoardCardGamePlugin"),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHCardEvaluator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_PHCardEvaluator_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHCardEvaluator_h_1141222018(TEXT("/Script/BoardCardGamePlugin"),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHCardEvaluator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_Evaluator_PHCardEvaluator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

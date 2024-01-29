@@ -1,9 +1,9 @@
 {
 	"SourceFiles": [
-		"D:\\UE5 Vacui Assets\\BoardCardGames\\Source\\BoardCardGames\\BoardCardGames.Build.cs",
-		"D:\\UE5 Vacui Assets\\BoardCardGames\\Plugins\\BoardCardGamePlugin\\Source\\BoardCardGamePlugin\\BoardCardGamePlugin.Build.cs",
-		"D:\\UE5 Vacui Assets\\BoardCardGames\\Source\\BoardCardGames.Target.cs",
-		"D:\\UE5 Vacui Assets\\BoardCardGames\\Source\\BoardCardGamesEditor.Target.cs"
+		"C:\\UE5 Vacui Assets\\BoardCardGames\\Source\\BoardCardGames\\BoardCardGames.Build.cs",
+		"C:\\UE5 Vacui Assets\\BoardCardGames\\Plugins\\BoardCardGamePlugin\\Source\\BoardCardGamePlugin\\BoardCardGamePlugin.Build.cs",
+		"C:\\UE5 Vacui Assets\\BoardCardGames\\Source\\BoardCardGames.Target.cs",
+		"C:\\UE5 Vacui Assets\\BoardCardGames\\Source\\BoardCardGamesEditor.Target.cs"
 	],
-	"EngineVersion": "5.3.1"
+	"EngineVersion": "5.3.2"
 }

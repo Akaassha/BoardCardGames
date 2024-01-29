@@ -11,7 +11,6 @@ void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBettingEnded__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBlindBettingEnded__DelegateSignature();
-	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardAdded__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardsDealed__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardsDrawn__DelegateSignature();
@@ -29,7 +28,6 @@ void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBettingEnded__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBlindBettingEnded__DelegateSignature,
-				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardAdded__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardsDealed__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardsDrawn__DelegateSignature,
@@ -43,13 +41,13 @@ void EmptyLinkFunctionForGeneratedCodeBoardCardGamePlugin_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x4F3E487B,
-				0x10CC4B2C,
+				0xB32CD6FF,
+				0xC98F3AA1,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_BoardCardGamePlugin.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BoardCardGamePlugin(Z_Construct_UPackage__Script_BoardCardGamePlugin, TEXT("/Script/BoardCardGamePlugin"), Z_Registration_Info_UPackage__Script_BoardCardGamePlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x4F3E487B, 0x10CC4B2C));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BoardCardGamePlugin(Z_Construct_UPackage__Script_BoardCardGamePlugin, TEXT("/Script/BoardCardGamePlugin"), Z_Registration_Info_UPackage__Script_BoardCardGamePlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB32CD6FF, 0xC98F3AA1));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
