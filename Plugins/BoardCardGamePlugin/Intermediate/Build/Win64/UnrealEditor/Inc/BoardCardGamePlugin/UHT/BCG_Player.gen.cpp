@@ -6,10 +6,10 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "BoardCardGamePlugin/Public/BCG/BCG_Player.h"
-#include "BoardCardGamePlugin/Public/BCG/BCG_Card.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBCG_Player() {}
 // Cross Module References
+	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Card_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Dealer_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player_NoRegister();
@@ -19,7 +19,6 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Player() {}
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature();
-	BOARDCARDGAMEPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FBCG_DataStruct();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_BoardCardGamePlugin();
@@ -170,7 +169,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(TArray<FBCG_DataStruct>*)Z_Param__Result=P_THIS->GetCards();
+		*(TArray<ABCG_Card*>*)Z_Param__Result=P_THIS->GetCards();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ABCG_Player::execWinTurn)
@@ -390,9 +389,9 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	{
 		struct BCG_Player_eventGetCards_Parms
 		{
-			TArray<FBCG_DataStruct> ReturnValue;
+			TArray<ABCG_Card*> ReturnValue;
 		};
-		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue_Inner;
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -400,8 +399,8 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 3788656489
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventGetCards_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 3788656489
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventGetCards_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABCG_Player_GetCards_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue,
@@ -618,13 +617,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "//UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\n//void Bet(float pot, float minimum, bool forced);\n//void Bet_Implementation(float pot, float minimum, bool forced);\n" },
-#endif
 		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\nvoid Bet(float pot, float minimum, bool forced);\nvoid Bet_Implementation(float pot, float minimum, bool forced);" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "WinTurn", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::PropPointers), sizeof(BCG_Player_eventWinTurn_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams) };
@@ -651,7 +644,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Cards_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Cards_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Cards_MetaData[];
 #endif
@@ -708,13 +701,13 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		{ &Z_Construct_UFunction_ABCG_Player_AddPoints, "AddPoints" }, // 1500322264
 		{ &Z_Construct_UFunction_ABCG_Player_BeginTurn, "BeginTurn" }, // 917338092
 		{ &Z_Construct_UFunction_ABCG_Player_DrawCard, "DrawCard" }, // 3925372422
-		{ &Z_Construct_UFunction_ABCG_Player_GetCards, "GetCards" }, // 1439455712
+		{ &Z_Construct_UFunction_ABCG_Player_GetCards, "GetCards" }, // 2976203949
 		{ &Z_Construct_UFunction_ABCG_Player_GetHandValue, "GetHandValue" }, // 3151049213
 		{ &Z_Construct_UFunction_ABCG_Player_GetPoints, "GetPoints" }, // 1042967403
 		{ &Z_Construct_UFunction_ABCG_Player_InsertCards, "InsertCards" }, // 27729626
 		{ &Z_Construct_UFunction_ABCG_Player_MakeAction, "MakeAction" }, // 4207401285
 		{ &Z_Construct_UFunction_ABCG_Player_SetPoints, "SetPoints" }, // 3782619264
-		{ &Z_Construct_UFunction_ABCG_Player_WinTurn, "WinTurn" }, // 1076861232
+		{ &Z_Construct_UFunction_ABCG_Player_WinTurn, "WinTurn" }, // 1914150309
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -724,14 +717,14 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_Inner = { "Cards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 3788656489
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_Inner = { "Cards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData[] = {
 		{ "Category", "BCG_Player" },
 		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData) }; // 3788656489
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown_MetaData[] = {
 		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
@@ -859,9 +852,9 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABCG_Player, ABCG_Player::StaticClass, TEXT("ABCG_Player"), &Z_Registration_Info_UClass_ABCG_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Player), 3246632128U) },
+		{ Z_Construct_UClass_ABCG_Player, ABCG_Player::StaticClass, TEXT("ABCG_Player"), &Z_Registration_Info_UClass_ABCG_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Player), 633863103U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_1497609869(TEXT("/Script/BoardCardGamePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_3794249270(TEXT("/Script/BoardCardGamePlugin"),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

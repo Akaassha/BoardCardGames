@@ -9,11 +9,11 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ABCG_Card;
 class ABCG_Dealer;
 class ABCG_Player;
 class UBCG_Action;
 class UBCG_Deck;
-struct FBCG_DataStruct;
 #ifdef BOARDCARDGAMEPLUGIN_BCG_Player_generated_h
 #error "BCG_Player.generated.h already included, missing '#pragma once' in BCG_Player.h"
 #endif

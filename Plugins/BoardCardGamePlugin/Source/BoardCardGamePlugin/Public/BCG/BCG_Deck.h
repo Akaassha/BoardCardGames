@@ -19,21 +19,21 @@ public:
 	UBCG_Deck();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = BCG)
-	UDataTable* Deck;
+	UDataTable* CardsTable;
 
 	UFUNCTION(BlueprintCallable)
 	void ShuffleDeck();
 
 	UFUNCTION(BlueprintCallable)
-	struct FBCG_DataStruct DrawCard();
+	class ABCG_Card* DrawCard();
 
 	UFUNCTION(BlueprintCallable)
-	void InsertCard(FBCG_DataStruct card, int at = 0);
+	void InsertCard(ABCG_Card* card, int at = 0);
 
 	UFUNCTION(BlueprintCallable)
-	void InsertCards(TArray<FBCG_DataStruct> cards, int at = 0);
+	void InsertCards(TArray<ABCG_Card* > cards, int at = 0);
 
-	TArray<FBCG_DataStruct> Cards;
+	TArray<ABCG_Card* > Cards;
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

@@ -1,6 +1,7 @@
-C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Deck.h
-C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_FunctionLibrary.h
-C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Player.h
-C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Dealer.h
 C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Card.h
+C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_FunctionLibrary.h
+C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Deck.h
+C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Player.h
+C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\ClassicCard.h
 C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Action.h
+C:\UE5 Vacui Assets\BoardCardGames\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Dealer.h

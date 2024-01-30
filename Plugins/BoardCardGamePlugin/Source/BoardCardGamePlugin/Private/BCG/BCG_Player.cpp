@@ -58,7 +58,8 @@ void ABCG_Player::MakeAction_Implementation(TSubclassOf<UBCG_Action> Action, ABC
 
 int32 ABCG_Player::GetHandValue()
 {
-	return UBCG_FunctionLibrary::EvaluateCards(Cards);
+	//return UBCG_FunctionLibrary::EvaluateCards(Cards);
+	return 0;
 }
 
 void ABCG_Player::SetPoints(float value)
@@ -79,7 +80,7 @@ void ABCG_Player::WinTurn_Implementation(float points)
 
 }
 
-TArray<FBCG_DataStruct> ABCG_Player::GetCards()
+TArray<ABCG_Card* > ABCG_Player::GetCards()
 { 
 	return Cards; 
 };

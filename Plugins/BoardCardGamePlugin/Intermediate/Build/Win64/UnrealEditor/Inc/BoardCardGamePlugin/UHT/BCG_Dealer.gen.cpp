@@ -6,10 +6,10 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "BoardCardGamePlugin/Public/BCG/BCG_Dealer.h"
-#include "BoardCardGamePlugin/Public/BCG/BCG_Card.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBCG_Dealer() {}
 // Cross Module References
+	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Card_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Dealer();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Dealer_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player_NoRegister();
@@ -20,7 +20,6 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Dealer() {}
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardsDrawn__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardsLoopDealed__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPotChanged__DelegateSignature();
-	BOARDCARDGAMEPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FBCG_DataStruct();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_BoardCardGamePlugin();
 // End Cross Module References
@@ -937,12 +936,12 @@ void FOnPotChanged_DelegateWrapper(const FMulticastScriptDelegate& OnPotChanged)
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Deck_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Deck;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_BoardCards_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BoardCards_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoardCards_MetaData[];
 #endif
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_BoardCards;
-		static const UECodeGen_Private::FStructPropertyParams NewProp_RemovedCards_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_RemovedCards_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_RemovedCards_MetaData[];
 #endif
@@ -1026,22 +1025,22 @@ void FOnPotChanged_DelegateWrapper(const FMulticastScriptDelegate& OnPotChanged)
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_Deck = { "Deck", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Dealer, Deck), Z_Construct_UClass_UBCG_Deck_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_Deck_MetaData), Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_Deck_MetaData) };
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_Inner = { "BoardCards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 3788656489
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_Inner = { "BoardCards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_MetaData[] = {
 		{ "Category", "BCG_Dealer" },
 		{ "ModuleRelativePath", "Public/BCG/BCG_Dealer.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards = { "BoardCards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Dealer, BoardCards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_MetaData), Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_MetaData) }; // 3788656489
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_Inner = { "RemovedCards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 3788656489
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards = { "BoardCards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Dealer, BoardCards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_MetaData), Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_BoardCards_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_Inner = { "RemovedCards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_MetaData[] = {
 		{ "Category", "BCG_Dealer" },
 		{ "ModuleRelativePath", "Public/BCG/BCG_Dealer.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards = { "RemovedCards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Dealer, RemovedCards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_MetaData), Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_MetaData) }; // 3788656489
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards = { "RemovedCards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Dealer, RemovedCards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_MetaData), Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_RemovedCards_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Dealer_Statics::NewProp_Pot_MetaData[] = {
 		{ "Category", "BCG_Dealer" },
@@ -1141,9 +1140,9 @@ void FOnPotChanged_DelegateWrapper(const FMulticastScriptDelegate& OnPotChanged)
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Dealer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABCG_Dealer, ABCG_Dealer::StaticClass, TEXT("ABCG_Dealer"), &Z_Registration_Info_UClass_ABCG_Dealer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Dealer), 1016745309U) },
+		{ Z_Construct_UClass_ABCG_Dealer, ABCG_Dealer::StaticClass, TEXT("ABCG_Dealer"), &Z_Registration_Info_UClass_ABCG_Dealer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Dealer), 2997508053U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Dealer_h_2060032206(TEXT("/Script/BoardCardGamePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Dealer_h_3163457685(TEXT("/Script/BoardCardGamePlugin"),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Dealer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Dealer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

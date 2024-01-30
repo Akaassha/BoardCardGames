@@ -9,7 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-struct FBCG_DataStruct;
+class ABCG_Card;
 #ifdef BOARDCARDGAMEPLUGIN_BCG_Deck_generated_h
 #error "BCG_Deck.generated.h already included, missing '#pragma once' in BCG_Deck.h"
 #endif

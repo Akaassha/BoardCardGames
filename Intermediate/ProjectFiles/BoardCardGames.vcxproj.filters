@@ -76,6 +76,9 @@
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards">
       <UniqueIdentifier>{C2BF4FB1-41D9-3042-B4B0-881B1DD4D770}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\ClassicCard.cpp">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards</Filter>
+    </ClCompile>
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator">
       <UniqueIdentifier>{71633A56-8F11-35B2-BD57-B5BB503BD610}</UniqueIdentifier>
     </Filter>
@@ -112,6 +115,9 @@
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards">
       <UniqueIdentifier>{B12758A5-3B04-38CD-A91A-DF051C0D1029}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\ClassicCard.h">
+      <Filter>Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards</Filter>
+    </ClInclude>
     <Filter Include="Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator">
       <UniqueIdentifier>{538E0800-0AE4-36AB-B577-00322F0C8C9E}</UniqueIdentifier>
     </Filter>

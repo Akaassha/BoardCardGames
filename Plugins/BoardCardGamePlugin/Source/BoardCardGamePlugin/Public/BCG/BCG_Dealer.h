@@ -81,10 +81,10 @@ public:
 	UBCG_Deck* Deck;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FBCG_DataStruct> BoardCards;
+	TArray<ABCG_Card* > BoardCards;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FBCG_DataStruct> RemovedCards;
+	TArray<ABCG_Card* > RemovedCards;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float Pot;

@@ -19,18 +19,21 @@ void UBCG_Deck::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	TArray<FName> RowNames = Deck->GetRowNames();
-	for (auto row : RowNames)
+	if (auto world = GetWorld())
 	{
-		FBCG_DataStruct card;
-		card.color = (Deck->FindRow<FBCG_DataStruct>(row, ""))->color;
-		card.kind = (Deck->FindRow<FBCG_DataStruct>(row, ""))->kind;
-		card.avers = (Deck->FindRow<FBCG_DataStruct>(row, ""))->avers;
-		//card.id = (Deck->FindRow<FBCG_DataStruct>(row, ""))->id;
-		card.id = ABCG_Card::card_id(card.kind, card.color);
-		Cards.Add(card);
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		FTransform SpawnTransform;
+
+		TArray<FName> RowNames = CardsTable->GetRowNames();
+		for (auto row : RowNames)
+		{
+			auto card = world->SpawnActor<ABCG_Card>(ABCG_Card::StaticClass(), SpawnTransform, SpawnParams);
+			card->SetPropertis(CardsTable, row);
+			Cards.Add(card);
+		}
 	}
+
 }
 
 
@@ -53,22 +56,22 @@ void UBCG_Deck::ShuffleDeck()
 	}
 }
 
-struct FBCG_DataStruct UBCG_Deck::DrawCard()
+ABCG_Card* UBCG_Deck::DrawCard()
 {
 	if (Cards.Num() <= 0)
-		return FBCG_DataStruct{};
+		return nullptr;
 
-	FBCG_DataStruct card = Cards[Cards.Num()-1];
+	auto card = Cards[Cards.Num()-1];
 	Cards.Pop();
 	return card;
 }
 
-void UBCG_Deck::InsertCard(struct FBCG_DataStruct card, int at)
+void UBCG_Deck::InsertCard(ABCG_Card* card, int at)
 {
 	Cards.Add(card);
 }
 
-void UBCG_Deck::InsertCards(TArray<FBCG_DataStruct> cards, int at)
+void UBCG_Deck::InsertCards(TArray<ABCG_Card*> cards, int at)
 {
 	for(auto card : cards)
 		InsertCard(card, at);

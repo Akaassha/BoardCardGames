@@ -39,19 +39,12 @@ public:
 	void MakeAction(TSubclassOf<UBCG_Action> action, ABCG_Player* player, ABCG_Dealer* dealer);
 	void MakeAction_Implementation(TSubclassOf<UBCG_Action> action, ABCG_Player* player, ABCG_Dealer* dealer);
 
-	//UFUNCTION()
-	//void OnActionFinnsihed(bool success);
-
-	//UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	//void Bet(float pot, float minimum, bool forced);
-	//void Bet_Implementation(float pot, float minimum, bool forced);
-
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void WinTurn(float points);
 	void WinTurn_Implementation(float points);
 
 	UFUNCTION(BlueprintCallable)
-	TArray<FBCG_DataStruct> GetCards();
+	TArray<ABCG_Card* > GetCards();
 
 	UFUNCTION(BlueprintCallable)
 	void InsertCards(UBCG_Deck* deck);
@@ -69,7 +62,7 @@ public:
 	void AddPoints(float value);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FBCG_DataStruct> Cards;
+	TArray<ABCG_Card*> Cards;
 
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FOnCardDrown OnCardDrown;

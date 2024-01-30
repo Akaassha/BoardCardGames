@@ -6,7 +6,7 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "BoardCardGamePlugin/Public/BCG/BCG_FunctionLibrary.h"
-#include "BoardCardGamePlugin/Public/BCG/BCG_Card.h"
+#include "BoardCardGamePlugin/Public/ClassicCards/ClassicCard.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBCG_FunctionLibrary() {}
 // Cross Module References
@@ -138,8 +138,8 @@ void EmptyLinkFunctionForGeneratedCodeBCG_FunctionLibrary() {}
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::NewProp_Cards_Inner = { "Cards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 3788656489
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_FunctionLibrary_eventEvaluateCards_Parms, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 3788656489
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::NewProp_Cards_Inner = { "Cards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 3524786565
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_FunctionLibrary_eventEvaluateCards_Parms, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 3524786565
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_FunctionLibrary_eventEvaluateCards_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards_Statics::NewProp_Cards_Inner,
@@ -222,7 +222,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_FunctionLibrary() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_FunctionLibrary_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UBCG_FunctionLibrary_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards, "EvaluateCards" }, // 1326267057
+		{ &Z_Construct_UFunction_UBCG_FunctionLibrary_EvaluateCards, "EvaluateCards" }, // 284375723
 		{ &Z_Construct_UFunction_UBCG_FunctionLibrary_GetHandValueAsText, "GetHandValueAsText" }, // 1946691833
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_FunctionLibrary_Statics::FuncInfo) < 2048);
@@ -274,9 +274,9 @@ void EmptyLinkFunctionForGeneratedCodeBCG_FunctionLibrary() {}
 		{ rank_category_StaticEnum, TEXT("rank_category"), &Z_Registration_Info_UEnum_rank_category, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 855866282U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBCG_FunctionLibrary, UBCG_FunctionLibrary::StaticClass, TEXT("UBCG_FunctionLibrary"), &Z_Registration_Info_UClass_UBCG_FunctionLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBCG_FunctionLibrary), 3240289520U) },
+		{ Z_Construct_UClass_UBCG_FunctionLibrary, UBCG_FunctionLibrary::StaticClass, TEXT("UBCG_FunctionLibrary"), &Z_Registration_Info_UClass_UBCG_FunctionLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBCG_FunctionLibrary), 1647976352U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_3832416133(TEXT("/Script/BoardCardGamePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_1535225084(TEXT("/Script/BoardCardGamePlugin"),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_FunctionLibrary_h_Statics::EnumInfo));
