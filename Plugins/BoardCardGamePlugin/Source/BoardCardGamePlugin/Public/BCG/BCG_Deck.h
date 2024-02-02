@@ -7,19 +7,22 @@
 #include "Engine/DataTable.h"
 #include "BCG_Deck.generated.h"
 
-struct FBCG_DataStruct;
+struct FClassicCardStruct;
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class BOARDCARDGAMEPLUGIN_API UBCG_Deck : public UActorComponent
 {
 	GENERATED_BODY()
 
-public:	
+public:
 	// Sets default values for this component's properties
 	UBCG_Deck();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = BCG)
 	UDataTable* CardsTable;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<ABCG_Card> CardsClass;
 
 	UFUNCTION(BlueprintCallable)
 	void ShuffleDeck();
@@ -33,14 +36,18 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void InsertCards(TArray<ABCG_Card* > cards, int at = 0);
 
+
+private:
 	TArray<ABCG_Card* > Cards;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	int get_deck_size();
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FORCEINLINE int Size() { return Cards.Num(); };
 };

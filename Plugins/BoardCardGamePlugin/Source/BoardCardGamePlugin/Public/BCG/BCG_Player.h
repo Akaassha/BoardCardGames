@@ -10,7 +10,7 @@ class UBCG_Deck;
 class ABCG_Dealer;
 class UBCG_Hand;
 class UBCG_Action;
-struct FBCG_DataStruct;
+struct FClassicCardStruct;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCardDrown);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBetEnded);

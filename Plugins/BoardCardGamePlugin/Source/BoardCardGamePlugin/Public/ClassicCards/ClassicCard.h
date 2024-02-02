@@ -14,23 +14,6 @@
  * 
  */
 
-const static std::unordered_map<char, int> rankMap = {
-  {'2', 0}, {'3', 1}, {'4', 2}, {'5', 3},
-  {'6', 4}, {'7', 5}, {'8', 6}, {'9', 7},
-  {'T', 8}, {'J', 9}, {'Q', 10}, {'K', 11}, {'A', 12},
-};
-
-const static std::unordered_map<char, int> suitMap = {
-  {'C', 0}, {'D', 1}, {'H', 2}, {'S', 3},
-  {'c', 0}, {'d', 1}, {'h', 2}, {'s', 3},
-};
-
-const static std::array<char, 13> rankReverseArray = {
-  '2', '3', '4', '5',
-  '6', '7', '8', '9',
-  'T', 'J', 'Q', 'K', 'A',
-};
-
 UENUM(BlueprintType)
 enum class BCG_CardColor : uint8
 {
@@ -61,7 +44,7 @@ enum class BCG_CardKind : uint8
 };
 
 USTRUCT(BlueprintType)
-struct FBCG_DataStruct : public FTableRowBase
+struct FClassicCardStruct : public FTableRowBase
 {
 	GENERATED_BODY()
 
@@ -71,12 +54,13 @@ struct FBCG_DataStruct : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	BCG_CardKind kind;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UTexture2D* avers;
+
 	UPROPERTY()
 	int id;
 
 };
-
-const static std::array<char, 4> suitReverseArray = { 'c', 'd', 'h', 's' };
 
 UCLASS()
 class BOARDCARDGAMEPLUGIN_API AClassicCard : public ABCG_Card
@@ -88,19 +72,19 @@ public:
 	AClassicCard();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ExposeOnSpawn = "true"))
-	FBCG_DataStruct CardData;
+	FClassicCardStruct CardData;
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	FString GetCardNameAsString();
+
+	UFUNCTION(BlueprintCallable)
+	void SetPropertis(UDataTable* CardTable, FName RowName) override;
 
 	UFUNCTION(BlueprintCallable)
 	void Print(float time = 10.f);
 
 	operator int() const { return CardData.id; }
 
-	static int card_id(BCG_CardKind kind, BCG_CardColor color);
 	FString PHEvaluatorCode;
-
-	void SetPropertis(UDataTable* CardTable, FName RowName) override;
 
 };

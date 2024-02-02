@@ -25,13 +25,17 @@ void UBCG_Deck::BeginPlay()
 		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 		FTransform SpawnTransform;
 
-		TArray<FName> RowNames = CardsTable->GetRowNames();
-		for (auto row : RowNames)
+		if (CardsClass)
 		{
-			auto card = world->SpawnActor<ABCG_Card>(ABCG_Card::StaticClass(), SpawnTransform, SpawnParams);
-			card->SetPropertis(CardsTable, row);
-			Cards.Add(card);
+			TArray<FName> RowNames = CardsTable->GetRowNames();
+			for (auto row : RowNames)
+			{
+				auto card = world->SpawnActor<ABCG_Card>(CardsClass, SpawnTransform, SpawnParams);
+				card->SetPropertis(CardsTable, row);
+				Cards.Add(card);
+			}
 		}
+
 	}
 
 }
@@ -68,16 +72,21 @@ ABCG_Card* UBCG_Deck::DrawCard()
 
 void UBCG_Deck::InsertCard(ABCG_Card* card, int at)
 {
-	Cards.Add(card);
+	if (card)
+	{
+		if (at != 0)
+		{
+			Cards.Insert(card, at);
+		}
+		else
+		{
+			Cards.Add(card);
+		}
+	}
 }
 
 void UBCG_Deck::InsertCards(TArray<ABCG_Card*> cards, int at)
 {
 	for(auto card : cards)
 		InsertCard(card, at);
-}
-
-int UBCG_Deck::get_deck_size()
-{
-	return Cards.Num();
 }

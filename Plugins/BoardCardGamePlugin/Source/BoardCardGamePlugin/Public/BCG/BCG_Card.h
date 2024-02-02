@@ -27,7 +27,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ExposeOnSpawn = "true"))
 	class UTexture2D* revers;
 
-	virtual void SetPropertis(UDataTable* CardTable, FName RowName) {};
+	virtual void SetPropertis(UDataTable* CardTable, FName RowName) PURE_VIRTUAL(ABCG_Card::SetPropertis, );
 
 protected:
 	// Called when the game starts or when spawned

@@ -14,7 +14,9 @@ void EmptyLinkFunctionForGeneratedCodeClassicCard() {}
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_AClassicCard_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UEnum* Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardColor();
 	BOARDCARDGAMEPLUGIN_API UEnum* Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardKind();
-	BOARDCARDGAMEPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FBCG_DataStruct();
+	BOARDCARDGAMEPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FClassicCardStruct();
+	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 	UPackage* Z_Construct_UPackage__Script_BoardCardGamePlugin();
 // End Cross Module References
@@ -49,15 +51,23 @@ void EmptyLinkFunctionForGeneratedCodeClassicCard() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardColor_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
+		{ "club.Comment", "/**\n * \n */" },
 		{ "club.DisplayName", "Club" },
 		{ "club.Name", "BCG_CardColor::club" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/**\n * \n */" },
+#endif
+		{ "diamond.Comment", "/**\n * \n */" },
 		{ "diamond.DisplayName", "Diamond" },
 		{ "diamond.Name", "BCG_CardColor::diamond" },
+		{ "heart.Comment", "/**\n * \n */" },
 		{ "heart.DisplayName", "Heart" },
 		{ "heart.Name", "BCG_CardColor::heart" },
 		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
+		{ "none.Comment", "/**\n * \n */" },
 		{ "none.DisplayName", "none" },
 		{ "none.Name", "BCG_CardColor::none" },
+		{ "spade.Comment", "/**\n * \n */" },
 		{ "spade.DisplayName", "Spade" },
 		{ "spade.Name", "BCG_CardColor::spade" },
 	};
@@ -174,22 +184,22 @@ void EmptyLinkFunctionForGeneratedCodeClassicCard() {}
 		return Z_Registration_Info_UEnum_BCG_CardKind.InnerSingleton;
 	}
 
-static_assert(std::is_polymorphic<FBCG_DataStruct>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FBCG_DataStruct cannot be polymorphic unless super FTableRowBase is polymorphic");
+static_assert(std::is_polymorphic<FClassicCardStruct>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FClassicCardStruct cannot be polymorphic unless super FTableRowBase is polymorphic");
 
-	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_BCG_DataStruct;
-class UScriptStruct* FBCG_DataStruct::StaticStruct()
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_ClassicCardStruct;
+class UScriptStruct* FClassicCardStruct::StaticStruct()
 {
-	if (!Z_Registration_Info_UScriptStruct_BCG_DataStruct.OuterSingleton)
+	if (!Z_Registration_Info_UScriptStruct_ClassicCardStruct.OuterSingleton)
 	{
-		Z_Registration_Info_UScriptStruct_BCG_DataStruct.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FBCG_DataStruct, (UObject*)Z_Construct_UPackage__Script_BoardCardGamePlugin(), TEXT("BCG_DataStruct"));
+		Z_Registration_Info_UScriptStruct_ClassicCardStruct.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FClassicCardStruct, (UObject*)Z_Construct_UPackage__Script_BoardCardGamePlugin(), TEXT("ClassicCardStruct"));
 	}
-	return Z_Registration_Info_UScriptStruct_BCG_DataStruct.OuterSingleton;
+	return Z_Registration_Info_UScriptStruct_ClassicCardStruct.OuterSingleton;
 }
-template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>()
+template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FClassicCardStruct>()
 {
-	return FBCG_DataStruct::StaticStruct();
+	return FClassicCardStruct::StaticStruct();
 }
-	struct Z_Construct_UScriptStruct_FBCG_DataStruct_Statics
+	struct Z_Construct_UScriptStruct_FClassicCardStruct_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
@@ -206,6 +216,10 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 #endif
 		static const UECodeGen_Private::FEnumPropertyParams NewProp_kind;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_avers_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_avers;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_id_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_id;
@@ -213,65 +227,73 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 		static const UECodeGen_Private::FStructParams ReturnStructParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::Struct_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FClassicCardStruct_Statics::Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
 	};
 #endif
-	void* Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewStructOps()
+	void* Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewStructOps()
 	{
-		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FBCG_DataStruct>();
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FClassicCardStruct>();
 	}
-	const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData[] = {
-		{ "Category", "BCG_DataStruct" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color_MetaData[] = {
+		{ "Category", "ClassicCardStruct" },
 		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color = { "color", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, color), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardColor, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_MetaData) }; // 4134465998
-	const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color = { "color", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FClassicCardStruct, color), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardColor, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color_MetaData), Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color_MetaData) }; // 2027129777
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData[] = {
-		{ "Category", "BCG_DataStruct" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind_MetaData[] = {
+		{ "Category", "ClassicCardStruct" },
 		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind = { "kind", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, kind), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardKind, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_MetaData) }; // 3603064350
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind = { "kind", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FClassicCardStruct, kind), Z_Construct_UEnum_BoardCardGamePlugin_BCG_CardKind, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind_MetaData), Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind_MetaData) }; // 3603064350
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_avers_MetaData[] = {
+		{ "Category", "ClassicCardStruct" },
 		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id = { "id", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FBCG_DataStruct, id), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id_MetaData), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id_MetaData) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color_Underlying,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_color,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind_Underlying,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_kind,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewProp_id,
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_avers = { "avers", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FClassicCardStruct, avers), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_avers_MetaData), Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_avers_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_id_MetaData[] = {
+		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
 	};
-	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::ReturnStructParams = {
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_id = { "id", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FClassicCardStruct, id), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_id_MetaData), Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_id_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FClassicCardStruct_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_color,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_kind,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_avers,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewProp_id,
+	};
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FClassicCardStruct_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_BoardCardGamePlugin,
 		Z_Construct_UScriptStruct_FTableRowBase,
 		&NewStructOps,
-		"BCG_DataStruct",
-		Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::PropPointers,
-		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::PropPointers),
-		sizeof(FBCG_DataStruct),
-		alignof(FBCG_DataStruct),
+		"ClassicCardStruct",
+		Z_Construct_UScriptStruct_FClassicCardStruct_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::PropPointers),
+		sizeof(FClassicCardStruct),
+		alignof(FClassicCardStruct),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::Struct_MetaDataParams)
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FClassicCardStruct_Statics::Struct_MetaDataParams)
 	};
-	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::PropPointers) < 2048);
-	UScriptStruct* Z_Construct_UScriptStruct_FBCG_DataStruct()
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FClassicCardStruct_Statics::PropPointers) < 2048);
+	UScriptStruct* Z_Construct_UScriptStruct_FClassicCardStruct()
 	{
-		if (!Z_Registration_Info_UScriptStruct_BCG_DataStruct.InnerSingleton)
+		if (!Z_Registration_Info_UScriptStruct_ClassicCardStruct.InnerSingleton)
 		{
-			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_BCG_DataStruct.InnerSingleton, Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::ReturnStructParams);
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_ClassicCardStruct.InnerSingleton, Z_Construct_UScriptStruct_FClassicCardStruct_Statics::ReturnStructParams);
 		}
-		return Z_Registration_Info_UScriptStruct_BCG_DataStruct.InnerSingleton;
+		return Z_Registration_Info_UScriptStruct_ClassicCardStruct.InnerSingleton;
 	}
 	DEFINE_FUNCTION(AClassicCard::execPrint)
 	{
@@ -279,6 +301,15 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 		P_FINISH;
 		P_NATIVE_BEGIN;
 		P_THIS->Print(Z_Param_time);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AClassicCard::execSetPropertis)
+	{
+		P_GET_OBJECT(UDataTable,Z_Param_CardTable);
+		P_GET_PROPERTY(FNameProperty,Z_Param_RowName);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetPropertis(Z_Param_CardTable,Z_Param_RowName);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(AClassicCard::execGetCardNameAsString)
@@ -294,6 +325,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetCardNameAsString", &AClassicCard::execGetCardNameAsString },
 			{ "Print", &AClassicCard::execPrint },
+			{ "SetPropertis", &AClassicCard::execSetPropertis },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -366,6 +398,44 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AClassicCard_SetPropertis_Statics
+	{
+		struct ClassicCard_eventSetPropertis_Parms
+		{
+			UDataTable* CardTable;
+			FName RowName;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CardTable;
+		static const UECodeGen_Private::FNamePropertyParams NewProp_RowName;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::NewProp_CardTable = { "CardTable", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ClassicCard_eventSetPropertis_Parms, CardTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::NewProp_RowName = { "RowName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ClassicCard_eventSetPropertis_Parms, RowName), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::NewProp_CardTable,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::NewProp_RowName,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AClassicCard, nullptr, "SetPropertis", nullptr, nullptr, Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::PropPointers), sizeof(Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::ClassicCard_eventSetPropertis_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::Function_MetaDataParams), Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::ClassicCard_eventSetPropertis_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_AClassicCard_SetPropertis()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AClassicCard_SetPropertis_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AClassicCard);
 	UClass* Z_Construct_UClass_AClassicCard_NoRegister()
 	{
@@ -394,6 +464,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 	const FClassFunctionLinkInfo Z_Construct_UClass_AClassicCard_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AClassicCard_GetCardNameAsString, "GetCardNameAsString" }, // 4247606757
 		{ &Z_Construct_UFunction_AClassicCard_Print, "Print" }, // 3712456226
+		{ &Z_Construct_UFunction_AClassicCard_SetPropertis, "SetPropertis" }, // 2372939577
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AClassicCard_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -409,7 +480,7 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 		{ "ModuleRelativePath", "Public/ClassicCards/ClassicCard.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData = { "CardData", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AClassicCard, CardData), Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData_MetaData), Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData_MetaData) }; // 3524786565
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData = { "CardData", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AClassicCard, CardData), Z_Construct_UScriptStruct_FClassicCardStruct, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData_MetaData), Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData_MetaData) }; // 3431422768
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AClassicCard_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AClassicCard_Statics::NewProp_CardData,
 	};
@@ -453,16 +524,16 @@ template<> BOARDCARDGAMEPLUGIN_API UScriptStruct* StaticStruct<FBCG_DataStruct>(
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::EnumInfo[] = {
-		{ BCG_CardColor_StaticEnum, TEXT("BCG_CardColor"), &Z_Registration_Info_UEnum_BCG_CardColor, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4134465998U) },
+		{ BCG_CardColor_StaticEnum, TEXT("BCG_CardColor"), &Z_Registration_Info_UEnum_BCG_CardColor, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2027129777U) },
 		{ BCG_CardKind_StaticEnum, TEXT("BCG_CardKind"), &Z_Registration_Info_UEnum_BCG_CardKind, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3603064350U) },
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::ScriptStructInfo[] = {
-		{ FBCG_DataStruct::StaticStruct, Z_Construct_UScriptStruct_FBCG_DataStruct_Statics::NewStructOps, TEXT("BCG_DataStruct"), &Z_Registration_Info_UScriptStruct_BCG_DataStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FBCG_DataStruct), 3524786565U) },
+		{ FClassicCardStruct::StaticStruct, Z_Construct_UScriptStruct_FClassicCardStruct_Statics::NewStructOps, TEXT("ClassicCardStruct"), &Z_Registration_Info_UScriptStruct_ClassicCardStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FClassicCardStruct), 3431422768U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AClassicCard, AClassicCard::StaticClass, TEXT("AClassicCard"), &Z_Registration_Info_UClass_AClassicCard, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AClassicCard), 3795066304U) },
+		{ Z_Construct_UClass_AClassicCard, AClassicCard::StaticClass, TEXT("AClassicCard"), &Z_Registration_Info_UClass_AClassicCard, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AClassicCard), 1151802218U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_1476025722(TEXT("/Script/BoardCardGamePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_1755634600(TEXT("/Script/BoardCardGamePlugin"),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::ScriptStructInfo),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_ClassicCards_ClassicCard_h_Statics::EnumInfo));

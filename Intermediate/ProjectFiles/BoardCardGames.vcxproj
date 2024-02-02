@@ -376,7 +376,17 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\BCG\BoardCardGame.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\ClassicCard.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Private\ClassicCards\Evaluator\CardEvaluatorBFL.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
@@ -393,7 +403,9 @@
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Deck.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_FunctionLibrary.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BCG_Player.h"/>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\BCG\BoardCardGame.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\ClassicCard.h"/>
+    <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator\CardEvaluatorBFL.h"/>
     <ClInclude Include="..\..\Plugins\BoardCardGamePlugin\Source\BoardCardGamePlugin\Public\ClassicCards\Evaluator\PHTables.h"/>
     <None Include="..\..\Plugins\BoardCardGamePlugin\BoardCardGamePlugin.uplugin"/>
     <None Include="..\..\Plugins\BoardCardGamePlugin\Resources\Icon128.png"/>

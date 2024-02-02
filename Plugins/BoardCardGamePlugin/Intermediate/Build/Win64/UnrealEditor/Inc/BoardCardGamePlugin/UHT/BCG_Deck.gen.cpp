@@ -12,10 +12,18 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Card_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_UBCG_Deck();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_UBCG_Deck_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_BoardCardGamePlugin();
 // End Cross Module References
+	DEFINE_FUNCTION(UBCG_Deck::execSize)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(int32*)Z_Param__Result=P_THIS->Size();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UBCG_Deck::execInsertCards)
 	{
 		P_GET_TARRAY(ABCG_Card*,Z_Param_cards);
@@ -56,6 +64,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 			{ "InsertCard", &UBCG_Deck::execInsertCard },
 			{ "InsertCards", &UBCG_Deck::execInsertCards },
 			{ "ShuffleDeck", &UBCG_Deck::execShuffleDeck },
+			{ "Size", &UBCG_Deck::execSize },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -196,6 +205,40 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UBCG_Deck_Size_Statics
+	{
+		struct BCG_Deck_eventSize_Parms
+		{
+			int32 ReturnValue;
+		};
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UBCG_Deck_Size_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Deck_eventSize_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UBCG_Deck_Size_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBCG_Deck_Size_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBCG_Deck_Size_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/BCG/BCG_Deck.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UBCG_Deck_Size_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UBCG_Deck, nullptr, "Size", nullptr, nullptr, Z_Construct_UFunction_UBCG_Deck_Size_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Deck_Size_Statics::PropPointers), sizeof(Z_Construct_UFunction_UBCG_Deck_Size_Statics::BCG_Deck_eventSize_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Deck_Size_Statics::Function_MetaDataParams), Z_Construct_UFunction_UBCG_Deck_Size_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UBCG_Deck_Size_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_UBCG_Deck_Size_Statics::BCG_Deck_eventSize_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_UBCG_Deck_Size()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UBCG_Deck_Size_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UBCG_Deck);
 	UClass* Z_Construct_UClass_UBCG_Deck_NoRegister()
 	{
@@ -212,6 +255,10 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CardsTable_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_CardsTable;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CardsClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_CardsClass;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -226,6 +273,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 		{ &Z_Construct_UFunction_UBCG_Deck_InsertCard, "InsertCard" }, // 1709519296
 		{ &Z_Construct_UFunction_UBCG_Deck_InsertCards, "InsertCards" }, // 584313480
 		{ &Z_Construct_UFunction_UBCG_Deck_ShuffleDeck, "ShuffleDeck" }, // 3048234832
+		{ &Z_Construct_UFunction_UBCG_Deck_Size, "Size" }, // 1234044091
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Deck_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -243,8 +291,16 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsTable = { "CardsTable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UBCG_Deck, CardsTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsTable_MetaData), Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsTable_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsClass_MetaData[] = {
+		{ "Category", "BCG_Deck" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Deck.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsClass = { "CardsClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UBCG_Deck, CardsClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsClass_MetaData), Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsClass_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBCG_Deck_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsTable,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBCG_Deck_Statics::NewProp_CardsClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UBCG_Deck_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UBCG_Deck>::IsAbstract,
@@ -284,9 +340,9 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Deck() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBCG_Deck, UBCG_Deck::StaticClass, TEXT("UBCG_Deck"), &Z_Registration_Info_UClass_UBCG_Deck, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBCG_Deck), 3229472723U) },
+		{ Z_Construct_UClass_UBCG_Deck, UBCG_Deck::StaticClass, TEXT("UBCG_Deck"), &Z_Registration_Info_UClass_UBCG_Deck, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBCG_Deck), 3769113689U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_1361221008(TEXT("/Script/BoardCardGamePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_2505374069(TEXT("/Script/BoardCardGamePlugin"),
 		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

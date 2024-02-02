@@ -20,6 +20,7 @@ class ABCG_Card;
 #define FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_15_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Deck_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSize); \
 	DECLARE_FUNCTION(execInsertCards); \
 	DECLARE_FUNCTION(execInsertCard); \
 	DECLARE_FUNCTION(execDrawCard); \
