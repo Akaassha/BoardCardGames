@@ -5,11 +5,11 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BoardCardGamePlugin/Public/BCG_Player.h"
-#include "BoardCardGamePlugin/Public/BCG_Card.h"
+#include "BoardCardGamePlugin/Public/BCG/BCG_Player.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBCG_Player() {}
 // Cross Module References
+	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Card_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Dealer_NoRegister();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player();
 	BOARDCARDGAMEPLUGIN_API UClass* Z_Construct_UClass_ABCG_Player_NoRegister();
@@ -19,7 +19,6 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Player() {}
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature();
 	BOARDCARDGAMEPLUGIN_API UFunction* Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature();
-	BOARDCARDGAMEPLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FBCG_DataStruct();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_BoardCardGamePlugin();
@@ -33,7 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeBCG_Player() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BoardCardGamePlugin, nullptr, "OnCardDrown__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -59,7 +58,7 @@ void FOnCardDrown_DelegateWrapper(const FMulticastScriptDelegate& OnCardDrown)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BoardCardGamePlugin, nullptr, "OnBetEnded__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -85,7 +84,7 @@ void FOnBetEnded_DelegateWrapper(const FMulticastScriptDelegate& OnBetEnded)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BoardCardGamePlugin, nullptr, "OnPointsChanged__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -111,7 +110,7 @@ void FOnPointsChanged_DelegateWrapper(const FMulticastScriptDelegate& OnPointsCh
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BoardCardGamePlugin, nullptr, "OnFold__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature_Statics::Function_MetaDataParams) };
@@ -170,7 +169,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(TArray<FBCG_DataStruct>*)Z_Param__Result=P_THIS->GetCards();
+		*(TArray<ABCG_Card*>*)Z_Param__Result=P_THIS->GetCards();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ABCG_Player::execWinTurn)
@@ -294,7 +293,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "AddPoints", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::BCG_Player_eventAddPoints_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_AddPoints_Statics::Function_MetaDataParams) };
@@ -330,7 +329,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//TO DO: try to make it implementable Event\n" },
 #endif
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "TO DO: try to make it implementable Event" },
 #endif
@@ -371,7 +370,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "DrawCard", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::PropPointers), sizeof(BCG_Player_eventDrawCard_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_DrawCard_Statics::Function_MetaDataParams) };
@@ -390,9 +389,9 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	{
 		struct BCG_Player_eventGetCards_Parms
 		{
-			TArray<FBCG_DataStruct> ReturnValue;
+			TArray<ABCG_Card*> ReturnValue;
 		};
-		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue_Inner;
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -400,15 +399,15 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 411631528
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventGetCards_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 411631528
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BCG_Player_eventGetCards_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABCG_Player_GetCards_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABCG_Player_GetCards_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_GetCards_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_GetCards_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "GetCards", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_GetCards_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_GetCards_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Player_GetCards_Statics::BCG_Player_eventGetCards_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_GetCards_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_GetCards_Statics::Function_MetaDataParams) };
@@ -442,7 +441,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "GetHandValue", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::BCG_Player_eventGetHandValue_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_GetHandValue_Statics::Function_MetaDataParams) };
@@ -476,7 +475,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "GetPoints", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::BCG_Player_eventGetPoints_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_GetPoints_Statics::Function_MetaDataParams) };
@@ -518,7 +517,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "InsertCards", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::BCG_Player_eventInsertCards_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_InsertCards_Statics::Function_MetaDataParams) };
@@ -554,7 +553,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "MakeAction", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::PropPointers), sizeof(BCG_Player_eventMakeAction_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_MakeAction_Statics::Function_MetaDataParams) };
@@ -588,7 +587,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "SetPoints", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::BCG_Player_eventSetPoints_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_SetPoints_Statics::Function_MetaDataParams) };
@@ -618,13 +617,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "//UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\n//void Bet(float pot, float minimum, bool forced);\n//void Bet_Implementation(float pot, float minimum, bool forced);\n" },
-#endif
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)\nvoid Bet(float pot, float minimum, bool forced);\nvoid Bet_Implementation(float pot, float minimum, bool forced);" },
-#endif
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABCG_Player, nullptr, "WinTurn", nullptr, nullptr, Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::PropPointers), sizeof(BCG_Player_eventWinTurn_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABCG_Player_WinTurn_Statics::Function_MetaDataParams) };
@@ -651,7 +644,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Cards_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Cards_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Cards_MetaData[];
 #endif
@@ -705,62 +698,62 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABCG_Player_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ABCG_Player_AddPoints, "AddPoints" }, // 2629065857
-		{ &Z_Construct_UFunction_ABCG_Player_BeginTurn, "BeginTurn" }, // 9544475
-		{ &Z_Construct_UFunction_ABCG_Player_DrawCard, "DrawCard" }, // 3986198655
-		{ &Z_Construct_UFunction_ABCG_Player_GetCards, "GetCards" }, // 466701552
-		{ &Z_Construct_UFunction_ABCG_Player_GetHandValue, "GetHandValue" }, // 882682491
-		{ &Z_Construct_UFunction_ABCG_Player_GetPoints, "GetPoints" }, // 3320315956
-		{ &Z_Construct_UFunction_ABCG_Player_InsertCards, "InsertCards" }, // 2608063131
-		{ &Z_Construct_UFunction_ABCG_Player_MakeAction, "MakeAction" }, // 508143157
-		{ &Z_Construct_UFunction_ABCG_Player_SetPoints, "SetPoints" }, // 3662311951
-		{ &Z_Construct_UFunction_ABCG_Player_WinTurn, "WinTurn" }, // 122439654
+		{ &Z_Construct_UFunction_ABCG_Player_AddPoints, "AddPoints" }, // 1500322264
+		{ &Z_Construct_UFunction_ABCG_Player_BeginTurn, "BeginTurn" }, // 917338092
+		{ &Z_Construct_UFunction_ABCG_Player_DrawCard, "DrawCard" }, // 3925372422
+		{ &Z_Construct_UFunction_ABCG_Player_GetCards, "GetCards" }, // 2976203949
+		{ &Z_Construct_UFunction_ABCG_Player_GetHandValue, "GetHandValue" }, // 3151049213
+		{ &Z_Construct_UFunction_ABCG_Player_GetPoints, "GetPoints" }, // 1042967403
+		{ &Z_Construct_UFunction_ABCG_Player_InsertCards, "InsertCards" }, // 27729626
+		{ &Z_Construct_UFunction_ABCG_Player_MakeAction, "MakeAction" }, // 4207401285
+		{ &Z_Construct_UFunction_ABCG_Player_SetPoints, "SetPoints" }, // 3782619264
+		{ &Z_Construct_UFunction_ABCG_Player_WinTurn, "WinTurn" }, // 1914150309
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
-		{ "IncludePath", "BCG_Player.h" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "IncludePath", "BCG/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_Inner = { "Cards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FBCG_DataStruct, METADATA_PARAMS(0, nullptr) }; // 411631528
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_Inner = { "Cards", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ABCG_Card_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData[] = {
 		{ "Category", "BCG_Player" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData) }; // 411631528
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards = { "Cards", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, Cards), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_Cards_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown_MetaData[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown = { "OnCardDrown", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnCardDrown), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown_MetaData) }; // 462848307
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown = { "OnCardDrown", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnCardDrown), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnCardDrown__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnCardDrown_MetaData) }; // 2495125241
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded_MetaData[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded = { "OnBetEnded", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnBetEnded), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded_MetaData) }; // 1811393383
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded = { "OnBetEnded", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnBetEnded), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnBetEnded__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnBetEnded_MetaData) }; // 1211680661
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged_MetaData[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged = { "OnPointsChanged", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnPointsChanged), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged_MetaData) }; // 2584452853
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged = { "OnPointsChanged", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnPointsChanged), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnPointsChanged__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnPointsChanged_MetaData) }; // 3516996397
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold_MetaData[] = {
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold = { "OnFold", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnFold), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold_MetaData) }; // 3189976832
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold = { "OnFold", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, OnFold), Z_Construct_UDelegateFunction_BoardCardGamePlugin_OnFold__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_OnFold_MetaData) }; // 4091862104
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_Points_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "BCG_Player" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_Points = { "Points", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, Points), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_Points_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_Points_MetaData) };
@@ -768,7 +761,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_CurrentBet_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "BCG_Player" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABCG_Player_Statics::NewProp_CurrentBet = { "CurrentBet", nullptr, (EPropertyFlags)0x0040000000000004, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABCG_Player, CurrentBet), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABCG_Player_Statics::NewProp_CurrentBet_MetaData), Z_Construct_UClass_ABCG_Player_Statics::NewProp_CurrentBet_MetaData) };
@@ -776,7 +769,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_IsFold_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "BCG_Player" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	void Z_Construct_UClass_ABCG_Player_Statics::NewProp_IsFold_SetBit(void* Obj)
@@ -788,7 +781,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_IsCurrentPlayer_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "BCG_Player" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	void Z_Construct_UClass_ABCG_Player_Statics::NewProp_IsCurrentPlayer_SetBit(void* Obj)
@@ -800,7 +793,7 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABCG_Player_Statics::NewProp_IsfirstPlayerInTurn_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "BCG_Player" },
-		{ "ModuleRelativePath", "Public/BCG_Player.h" },
+		{ "ModuleRelativePath", "Public/BCG/BCG_Player.h" },
 	};
 #endif
 	void Z_Construct_UClass_ABCG_Player_Statics::NewProp_IsfirstPlayerInTurn_SetBit(void* Obj)
@@ -854,15 +847,15 @@ void FOnFold_DelegateWrapper(const FMulticastScriptDelegate& OnFold)
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABCG_Player);
 	ABCG_Player::~ABCG_Player() {}
-	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics
+	struct Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABCG_Player, ABCG_Player::StaticClass, TEXT("ABCG_Player"), &Z_Registration_Info_UClass_ABCG_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Player), 2512095017U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ABCG_Player, ABCG_Player::StaticClass, TEXT("ABCG_Player"), &Z_Registration_Info_UClass_ABCG_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABCG_Player), 633863103U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_4277672476(TEXT("/Script/BoardCardGamePlugin"),
-		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_Player_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_3794249270(TEXT("/Script/BoardCardGamePlugin"),
+		Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE5_Vacui_Assets_BoardCardGames_Plugins_BoardCardGamePlugin_Source_BoardCardGamePlugin_Public_BCG_BCG_Player_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
